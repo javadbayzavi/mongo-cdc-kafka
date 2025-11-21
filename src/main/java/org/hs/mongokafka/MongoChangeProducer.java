@@ -6,7 +6,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 
 import java.util.Properties;
 
-public class MongoChangeProducer {
+public class MongoChangeProducer implements ChangeProducer {
     // Create Kafka producer
     private final Producer<String, String> producer;
     private final String topic;
