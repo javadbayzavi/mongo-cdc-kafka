@@ -1,6 +1,7 @@
 package org.hs.mongokafka.infra;
 
 import org.hs.mongokafka.AppConfig;
+import org.hs.mongokafka.AppRunner;
 import org.hs.mongokafka.MongoChangeProducer;
 import org.hs.mongokafka.MongoListener;
 import org.springframework.context.annotation.Bean;
@@ -26,5 +27,10 @@ public class BeansProvider {
                         appConfig.getMongoCollection()
                 )
         );
+    }
+
+    @Bean
+    public AppRunner appRunner(MongoListener mongoListener) {
+        return new AppRunner(mongoListener);
     }
 }
