@@ -21,4 +21,23 @@ public class AppConfig {
     @Value("${app.kafka.topic}")
     private String kafkaTopic;
 
+    public String getMongoUri() {
+        return mongoUri;
+    }
+
+    public String getMongoDatabase() {
+        return mongoDatabase;
+    }
+
+    public String getMongoCollection() {
+        return mongoCollection;
+    }
+
+    public String getKafkaBootstrapServers() {
+        return kafkaBootstrapServers;
+    }
+
+    public String getKafkaTopic() {
+        return kafkaTopic;
+    }
 }
