@@ -8,12 +8,12 @@ import com.mongodb.client.model.changestream.ChangeStreamDocument;
 import org.bson.Document;
 
 public class MongoListener {
-    private final MongoChangeProducer producer;
+    private final ChangeProducer producer;
     private final MongoClient mongoClient;
     private MongoDatabase mongoDatabase;
     private MongoCollection<Document> collection;
 
-    public MongoListener(MongoChangeProducer producer, MongoConfiguration configuration) {
+    public MongoListener(ChangeProducer producer, MongoConfiguration configuration) {
         this.producer = producer;
         this.mongoClient = MongoClients.create(configuration.connectionUri());
         this.mongoDatabase = mongoClient.getDatabase(configuration.database);
